@@ -1,0 +1,20 @@
+{%include 'partials/_header.html' %}
+    <h2>Calculation Results</h2>
+    {% if pageNumber == 0%}
+        <p>Your vehicle is capable of traversing a distance of <b>{{result}} km</b> with a single charge.</p>
+        <p>Your average energy consumption is <b>{{result2}} Wh/km</b>.</p>
+    {% elif pageNumber == 1 %}
+        <p>Your time to accelerate from 0 to 25km/h is: <b>{{result}} seconds.</b></p>
+        {%if result2 <= 16 %}
+            <p>Your time to accelerate from 0 to 45km/h is: <b>{{result2}} seconds.</b></p>
+        {%else%}
+            <p>Your vehicle is not powerful enough to reach to 45km/h.</p>
+        {%endif%}
+    {% elif pageNumber == 2 %}
+        <p>Your battery costs <b>{{result}} ₺</b> to fully charge.</p>
+        <p>Your commuting cost is about <b>{{result2}} ₺/km</b>.</p>
+        {% if result3 != None%}
+            <p>For comparison, an average {{compType}} has a commuting cost of <b>{{result3}} ₺/km</b>.</p>
+        {%endif%}
+    {%endif%}
+{% include 'partials/_footer.html' %}

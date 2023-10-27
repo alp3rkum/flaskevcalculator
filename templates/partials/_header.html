@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <head>
+      <title>{{title}}</title>
+      <link rel= "stylesheet" type= "text/css" href= '{{ url_for('static',filename='styles/style.css') }}'>
+      <script type="text/javascript" src="{{ url_for('static',filename='js/script.js') }}"></script>
+    </head>
+    <body>
+      <span class="inputSpan themeSpan"><b>Theme:</b><input type="radio" name="theme" id="white" onchange="sessionStorage.setItem('themeIndex',0);changeTheme();">White <input type="radio" name="theme" id="dark" onchange="sessionStorage.setItem('themeIndex',1);changeTheme();">Dark <input type="radio" name="theme" id="blue" onchange="sessionStorage.setItem('themeIndex',2);changeTheme();">Blue</span> 
+        <h1>Flask EV Calculator</h1>
+        <p>A Pythonic automobile calculator. *hisss*</p>
+        {%if pageNumber != -1 %}
+        <a class="link" href="../">Main</a>
+          {%if curRoute != "/help"%}
+          <a class="link" href="../help">Help</a>
+          {% else %}
+            {% if pageNumber == 0 %}
+              <a class="link" href="../range">Back</a>
+            {% elif pageNumber == 1 %}
+              <a class="link" href="../accel">Back</a>
+            {% elif pageNumber == 2 %}
+              <a class="link" href="../cost">Back</a>
+            {% endif %}
+          {%endif%}
+        {%endif%}
+        <hr/>

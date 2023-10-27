@@ -1,0 +1,35 @@
+{% include 'partials/_header.html' %}
+<p>A cost calculator to see how much you'll spend commuting on a light electric vehicle.</p>
+<p>Coded in HTML, CSS, Javascript and Python.</p>
+<p>Feel free to toy around :)</p>
+</hr>
+<form action="/calculate" method="POST">
+    <h3>Necessary Inputs</h3>
+    <div class="inputs">
+        <div class="inputs-inner">
+            <label>Battery Capacity: </label> <select name="voltage" id="" required>
+                <option>24</option>
+                <option>36</option>
+                <option>48</option>
+                <option>60</option>
+                <option>72</option>
+                <option>84</option>
+                <option>96</option>
+              </select> V <span class="inputSpan"><input type="number" name="amper" id="" min="5" max="150" step="0.1" required> Ah<br></span> 
+              <label>Your Range: </label> <span class="inputSpan"><input type="number" name="range" id="" min="5" max="200" required> km<br></span>
+              <label>Compare With: </label> <select name="compare" id="" required>
+                <option>Don't compare</option>
+                <option>50cc Moped</option>
+                <option>125cc Motorcycle</option>
+                <option>150cc Motorcycle</option>
+                <option>Gas Treeporter</option>
+                <option>Car (Diesel)</option>
+                <option>Car (Gasoline)</option>
+              </select>
+              <br><br>
+              <button type="submit">Confirm</button>
+              <button type="reset">Reset</button>
+        </div>
+    </div>
+</form>
+{% include 'partials/_footer.html' %}

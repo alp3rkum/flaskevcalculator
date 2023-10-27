@@ -1,0 +1,31 @@
+{% include 'partials/_header.html' %}
+    <h2>How To Use Calculator</h2>
+    {% if pageNumber == 0 %}
+        <p>Usage of the Flask EV Range Calculator is quite simple. You fill the form with appropriate inputs and hit the "Confirm" button for Flask to start the calculation, then it redirects you to the result page for you to see the result.</p>
+        <p>But the real trick is to know what values mean and how they affect the calculation, so here's a short summary of each variable.</p>
+        <h3>Variables</h3>
+        <p><b>Vehicle Type:</b> There are five main types of light electric vehicles. "Unicycle" is a small self-balancing vehicle with only one wheel. "Scooter" is your average kick scooter but with a motor and a battery. "Motorcycle" is the plain old motor scooter. "Treeporter" is a three wheeled vehicle that is controlled with a motorcycle handle. "Microcar" is mostly a super small hatchback that seats mostly two or three.</p>
+        <p><b>Vehicle Weight:</b> Vehicle's weight without a driver, passenger/load and battery.</p>
+        <p><b>Voltage:</b> Voltage of the vehicle's drivetrain. Most light electric vehicles (except unicycles) fall between 24 and 72 volts, but there are 84 volt scooters/motorcycles as well, even pages telling you how to modify your 72V motorcycle to 96V.</p>
+        <p><b>Amper-Hour:</b> Amper-Hour of the battery. Most light electric vehicle batteries are between 5-100Ah.</p>
+        <p><b>Battery Type:</b> There are two main types of batteries in light electric vehicles: Lead-Acid, which are your good old car batteries, and Li-Ion a.k.a. lithium battery, which is the type of battery used in scooters and mainstream electric cars like Tesla and VW I.D. There is also a new type of battery emerging, the Graphene, which is claimed to be able to hold up to 1kWh of energy per kilogram!</p>
+        <p><b>Cruise Speed:</b> How fast you cruise with your vehicle in average. Most light electric vehicles are used within a range of 20-40km/h, but Flask EV Range Calculator allows you to enter a range between 15-50km/h. As higher speeds need more energy, they will result in a shorter range.</p>
+        <h3>Tips</h3>
+        <p>If you don't know your battery's Ah, but know total capacity (in Wh) instead, you can divide the total capacity with voltage to find your Ah.</p>
+        <p>As a higher capacity needs a bigger battery, Flask EV Range Calculator calculates battery's weight and adds it to vehicle's empty vehicle during calculation. This is why the type of battery is as important as battery's capacity, because heavier battery equals heavier vehicle, which results in shorter range. To find battery weight, Flask EV Range Calculator considers Lead Acid batteries' energy density as 30Wh/kg, while Li-Ion is 60Wh/kg (as well as a High Density model with 100Wh/kg) and Graphene is 140Wh/kg. Of course in real life situations it depends per the manufacturer and the model of the battery.</p>
+    {%elif pageNumber == 1%}
+        <p>Usage of the Flask EV Acceleration Calculator is very simple. You simply enter your wattage and weight without any driver or loads to calculate your vehicle's potential acceleration time.</p>
+        <p><b>Wattage: </b>Flask EV Acceleration Calculator takes anywhere from 180 to 10000 watt as an input. Most light EV's fall under 4kW bracket, which is the maximum upper limit for moped (M) class vehicles with electric propulsion.</p>
+        <p><b>Weight with battery: </b>Flask EV Acceleration Calculator can calculate the acceleration of a vehicle that weighs up to 925kg, as the calculator takes driver's weight as 75 kilograms to complete vehicle's weight to a full ton.</p>
+        <p><b>Results: </b>Flask EV Acceleration Calculator calculates two acceleration frames: 0-25km/h and 0-45km/h. This is because most low end light EV's are designed to achieve 25km/h of top speed, and moped (M) class allows for up to 45km/h of top speed for any type of vehicle.</p>
+        <h3>Tips</h3>
+        <p>0-25km/h results under 1 second can be considered unrealistic or ballpark.</p>
+        <p>If Flask EV Acceleration Calculator finds 0-45km/h result as anything bigger than 16 seconds, the result is simply won't show up, because the calculator deems the vehicle unfit to reach 45km/h.</p>
+        <p><i><b>Real life results can and will vary because of drivetrain efficiency, environment and health of the vehicle. So keep in mind that this calculator might not be %100 accurate in every result.</b></i></p>
+    {%elif pageNumber == 2%}
+        <p>Usage of the Flask EV Cost Calculator is very simple. You simply enter your battery, your range and the type of gas-powered vehicle you want to compare your EV (or future EV) to.</p>
+        <p><b>Battery Capacity: </b>The program takes the battery input directly from Range Calculator so you won't have to calculate how many Watt-hours your vehicle has :)</p>
+        <p><b>Range: </b>Your EV's range. You can calculate it using <a class="link" href="/range">the Range Calculator</a>.</p>
+        <p><b>Compare With: </b>This field allows you to choose the type of vehicle you'd want to compare your EV with in terms of commuting costs. You can choose among 50 & 125 & 150+ cc motorcycles, gas treeporter and diesel & gasoline cars.<i>This field is optional so if you don't want to compare your EV with any other vehicle, simply select "Don't Compare" from the list.</i></p>
+    {% endif %}
+{% include 'partials/_footer.html' %}

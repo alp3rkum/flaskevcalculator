@@ -1,0 +1,223 @@
+html{
+    background-color: rgb(240,240,240);
+    font-family: 'Segoe UI';
+    transition-property: background-color, color;
+    transition-duration: 0.35s;
+}
+
+label{
+    font-weight: bold;
+}
+
+.inputs{
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(120,120,120);
+    border-radius: 5px;
+    background-color: rgb(232,232,232);
+    transition-property: background-color,border-color;
+    transition-duration: 0.35s;
+    
+}
+.inputs.dark{
+    background-color: rgb(48,48,48);
+    border-color: rgb(224,224,224);
+}
+.inputs.blue{
+    background-color: rgb(24,48,108);
+    border-color: rgb(224,224,224);
+}
+
+.inputs-inner{
+    margin: 5px 5px 5px 5px;
+}
+
+input[type=number],select{
+    border-style: outset;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 5px;
+    transition-property: border-color;
+    transition-duration: 0.35s;
+}
+
+input[type=number]:hover,select:hover{
+    border-color: white;
+}
+
+input[type=number]:focus{
+    border-color: black;
+}
+
+button{
+    width: 75px;
+    height: 30px;
+    border: rgb(192,192,192) solid;
+    border-radius: 10px;
+    background-color: rgb(232,232,232);
+    transition-duration: 0.35s;
+}
+button:hover{
+    background-color: rgb(244,244,244);
+}
+button:active{
+    background-color: rgb(255,255,255);
+}
+
+button.dark{
+    border-radius: 10px;
+    border: rgb(32,32,32) solid;
+    background-color: rgb(64,64,64);
+    color: white;
+    transition-duration: 0.35s;
+}
+button.dark:hover{
+    background-color: rgb(80,80,80);
+}
+button.dark:active{
+    background-color: rgb(96,96,96);
+}
+
+button.blue{
+    border-radius: 10px;
+    border: rgb(16,32,96) solid;
+    background-color: rgb(32,64,112);
+    color: white;
+    transition-duration: 0.35s;
+}
+button.blue:hover{
+    background-color: rgb(48,80,128);
+}
+button.blue:active{
+    background-color: rgb(64,96,144);
+}
+
+span{
+    color: gray;
+    transition-property: color;
+    transition-duration: 0.35s;
+}
+span.dark{
+    color: silver;
+}
+span.blue{
+    color: rgb(255,255,0);
+}
+
+label{
+    display: inline-block;
+    width: 160px;
+}
+
+.inputSpan{
+    clear: left;
+    color: black;
+    transition-property: color;
+    transition-duration: 0.35s;
+}
+.inputSpan.dark{
+    color: white;
+    transition-property: color;
+    transition-duration: 0.35s;
+}
+.inputSpan.blue{
+    color: white;
+    transition-property: color;
+    transition-duration: 0.35s;
+}
+
+.themeSpan{
+    position: absolute;
+    right: 20px;
+}
+
+.inputText{
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+.linkSpan{
+    display: inline-block;
+    text-align: center;
+    border-style: groove;
+    border-radius: 16px;
+    border-width: 4px;
+    margin: 0px 0px 0px 50px;
+    width: 350px;
+    height: 40px;
+    transition-property: background-color;
+    transition-duration: 0.35s;
+}
+.linkSpan:hover{
+    background-color: white;
+    color: black;
+}
+.linkSpan.black{
+    display: inline-block;
+    text-align: center;
+    border-style: groove;
+    border-radius: 16px;
+    border-width: 4px;
+    margin: 0px 0px 0px 50px;
+    width: 350px;
+    height: 40px;
+    transition-property: background-color;
+    transition-duration: 0.35s;
+}
+.linkSpan.black:hover{
+    background-color: gray;
+    color: white;
+}
+.linkSpan.blue{
+    color: rgb(128,128,0);
+    display: inline-block;
+    text-align: center;
+    border-style: groove;
+    border-radius: 16px;
+    border-width: 4px;
+    margin: 0px 0px 0px 50px;
+    width: 350px;
+    height: 40px;
+    transition-property: background-color;
+    transition-duration: 0.35s;
+}
+.linkSpan.blue:hover{
+    background-color: blue;
+    color: yellow;
+}
+
+.link{
+    text-decoration: none;
+    justify-content: center;
+    color: rgb(0,0,160);
+    transition-property: color;
+    transition-duration: 0.35s;
+}
+
+.link:hover{
+    color: rgb(0,0,208);
+}
+
+.link:active{
+    color: rgb(0,0,255);
+}
+
+.link.dark{
+    color: rgb(160,160,160);
+}
+.link.dark:hover{
+    color: rgb(208,208,208);
+}
+.link.dark:active{
+    color: rgb(255,255,255);
+}
+
+.link.blue{
+    color: rgb(160,160,0);
+}
+.link.blue:hover{
+    color: rgb(208,208,0);
+}
+.link.blue:active{
+    color: rgb(255,255,0);
+}
