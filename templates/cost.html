@@ -1,8 +1,9 @@
 {% include 'partials/_header.html' %}
+<div class="div-content">
 <p>A cost calculator to see how much you'll spend commuting on a light electric vehicle.</p>
 <p>Coded in HTML, CSS, Javascript and Python.</p>
 <p>Feel free to toy around :)</p>
-</hr>
+</hr class="div-content-hr">
 <form action="/calculate" method="POST">
     <h3>Necessary Inputs</h3>
     <div class="inputs">
@@ -32,4 +33,5 @@
         </div>
     </div>
 </form>
+</div>
 {% include 'partials/_footer.html' %}

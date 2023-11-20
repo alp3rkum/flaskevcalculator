@@ -2,24 +2,27 @@
     <head>
       <title>{{title}}</title>
       <link rel= "stylesheet" type= "text/css" href= '{{ url_for('static',filename='styles/style.css') }}'>
-      <script type="text/javascript" src="{{ url_for('static',filename='js/script.js') }}"></script>
+      <script defer type="text/javascript" src="{{ url_for('static',filename='js/script.js') }}"></script>
     </head>
     <body>
-      <span class="inputSpan themeSpan"><b>Theme:</b><input type="radio" name="theme" id="white" onchange="sessionStorage.setItem('themeIndex',0);changeTheme();">White <input type="radio" name="theme" id="dark" onchange="sessionStorage.setItem('themeIndex',1);changeTheme();">Dark <input type="radio" name="theme" id="blue" onchange="sessionStorage.setItem('themeIndex',2);changeTheme();">Blue</span> 
-        <h1>Flask EV Calculator</h1>
-        <p>A Pythonic automobile calculator. *hisss*</p>
+      <header>
+        <span class="inputSpan themeSpan"><b>Theme:</b><input type="radio" name="theme" id="white" onchange="sessionStorage.setItem('themeIndex',0);changeTheme();">White <input type="radio" name="theme" id="dark" onchange="sessionStorage.setItem('themeIndex',1);changeTheme();">Dark <input type="radio" name="theme" id="blue" onchange="sessionStorage.setItem('themeIndex',2);changeTheme();">Blue </span> 
+        <a class="link" href="/"><img id="flask-logo" src="../../static/flask.png" width="100" height="100"><span id="page-title">EV Calculator</span></a>
+        <p class="header-text">A Pythonic automobile calculator. *hisss*</p>
         {%if pageNumber != -1 %}
-        <a class="link" href="../">Main</a>
-          {%if curRoute != "/help"%}
-          <a class="link" href="../help">Help</a>
+        <a class="link" href="../"><div class="linkSpan small">Main</div></a>
+          {%if curRoute != "/help" and pageNumber != -2 %}
+          <a class="link" href="../help"><div class="linkSpan small">Help</div></a>
           {% else %}
             {% if pageNumber == 0 %}
-              <a class="link" href="../range">Back</a>
+              <a class="link" href="../range"><div class="linkSpan small">Back</div></a>
             {% elif pageNumber == 1 %}
-              <a class="link" href="../accel">Back</a>
+              <a class="link" href="../accel"><div class="linkSpan small">Back</div></a>
             {% elif pageNumber == 2 %}
-              <a class="link" href="../cost">Back</a>
+              <a class="link" href="../cost"><div class="linkSpan small">Back</div></a>
             {% endif %}
           {%endif%}
         {%endif%}
         <hr/>
+      </header>
+      

@@ -1,18 +1,21 @@
 {% include 'partials/_header.html' %}
+<div class="div-content">
     <p>An acceleration calculator designed specifically for light electric vehicles. With this calculator, you will find out how fast your EV (or your future EV) accelerates.</p>
     <p>Coded in HTML, CSS, Javascript and Python.</p>
     <p>Feel free to toy around :)</p>
-    <hr/>
+    <hr class="div-content-hr"/>
     <form action="/calculate" method="POST">
         <h3>Necessary Inputs</h3>
         <div class="inputs">
             <div class="inputs-inner">
-                <label>Vehicle's Power: </label> <span class="inputSpan"><input type="number" name="watt" id="watt" min="180" max="10000" required>watt<br></span>
+                <label>Vehicle's Power: </label> <span class="inputSpan"><input type="number" name="watt" id="watt" min="180" max="15000" required>watt<br></span>
                 <label>Weight w/ battery: </label> <span class="inputSpan"><input type="number" name="gvw" id="gvw" min="10" max="925" required>kg<br></span>
+                <label>Vehicle's Age (years):</label> <span class="inputSpan"><input type="number" name="age" id="age" min="1" max="20"></span>
                 <br>
                 <button type="submit">Confirm</button>
                 <button type="reset">Reset</button>
             </div>
         </div>
     </form>
+</div>
 {% include 'partials/_footer.html' %}

@@ -1,4 +1,5 @@
 {% include 'partials/_header.html' %}
+<div class="div-content">
     <h2>How To Use Calculator</h2>
     {% if pageNumber == 0 %}
         <p>Usage of the Flask EV Range Calculator is quite simple. You fill the form with appropriate inputs and hit the "Confirm" button for Flask to start the calculation, then it redirects you to the result page for you to see the result.</p>
@@ -17,6 +18,7 @@
         <p>Usage of the Flask EV Acceleration Calculator is very simple. You simply enter your wattage and weight without any driver or loads to calculate your vehicle's potential acceleration time.</p>
         <p><b>Wattage: </b>Flask EV Acceleration Calculator takes anywhere from 180 to 10000 watt as an input. Most light EV's fall under 4kW bracket, which is the maximum upper limit for moped (M) class vehicles with electric propulsion.</p>
         <p><b>Weight with battery: </b>Flask EV Acceleration Calculator can calculate the acceleration of a vehicle that weighs up to 925kg, as the calculator takes driver's weight as 75 kilograms to complete vehicle's weight to a full ton.</p>
+        <p><b>Vehicle's Age: </b>Age of the vehicle in years. Older the vehicle (or at least the drivetrain) is, the slower it accelerates. Optional parameter.</p>
         <p><b>Results: </b>Flask EV Acceleration Calculator calculates two acceleration frames: 0-25km/h and 0-45km/h. This is because most low end light EV's are designed to achieve 25km/h of top speed, and moped (M) class allows for up to 45km/h of top speed for any type of vehicle.</p>
         <h3>Tips</h3>
         <p>0-25km/h results under 1 second can be considered unrealistic or ballpark.</p>
@@ -28,4 +30,5 @@
         <p><b>Range: </b>Your EV's range. You can calculate it using <a class="link" href="/range">the Range Calculator</a>.</p>
         <p><b>Compare With: </b>This field allows you to choose the type of vehicle you'd want to compare your EV with in terms of commuting costs. You can choose among 50 & 125 & 150+ cc motorcycles, gas treeporter and diesel & gasoline cars.<i>This field is optional so if you don't want to compare your EV with any other vehicle, simply select "Don't Compare" from the list.</i></p>
     {% endif %}
+</div>
 {% include 'partials/_footer.html' %}

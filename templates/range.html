@@ -1,8 +1,9 @@
 {% include 'partials/_header.html' %}
+<div class="div-content">       
         <p>As EV (electric vehicle)'s are increasingly becoming a bigger part of transportation, there are numerous calculators related to various aspects of EV's. Among those aspects, <a class="link" href="https://en.wikipedia.org/wiki/Range_anxiety">their range remains the biggest concern</a>. In a respect to this, Flask EV Range Calculator is designed to be the most consumer friendly calculator related to EV's.</p>
-          <p>Coded in HTML, CSS, Javascript and Python.</p>
+        <p>Coded in HTML, CSS, Javascript and Python.</p>
         <p>Feel free to toy around :)</p>
-        <hr/>
+        <hr class="div-content-hr"/>
         <form action="/calculate" method="POST">
           <h3>Necessary Inputs</h3>
           <div class="inputs">
@@ -17,8 +18,9 @@
                 <option>72</option>
                 <option>84</option>
                 <option>96</option>
-              </select> V <span class="inputSpan"><input type="number" name="amper" id="" min="5" max="150" step="0.1" required> Ah<br></span> 
-              <label>Battery Type: </label> <span class="inputSpan"><input type="radio" name="btype" value="30">Lead Acid <input type="radio" name="btype" value="60" required>Li-Ion <input type="radio" name="btype" value="100" required>Li-Ion <span title="High Density">(H.D.)</span> <input type="radio" name="btype" value="140" required>Graphene <br></span> 
+              </select> V <span class="inputSpan"><input type="number" name="amper" id="" min="5" max="150" step="0.1" required> Ah<br></span>
+              <label>Battery Type: </label> <span class="inputSpan"><input type="radio" name="btype" value="30">Lead Acid <input type="radio" name="btype" value="60" required>Li-Ion <input type="radio" name="btype" value="100" required>Li-Ion <span title="High Density">(H.D.)</span> <input type="radio" name="btype" value="140" required>Graphene <br></span>
+              <label>Battery Age (mo.): </label> <span class="inputSpan"><input type="number" name="bage" id="" min="1" max="60"><br></span>
               <label>Cruise Speed: </label> <span class="inputSpan"><input type="number" name="vmax" id="" min="15" max="50" required>km/h<br></span>
               <br>
               <button type="submit">Confirm</button>
@@ -28,4 +30,5 @@
           </div>
           
         </form>
+</div>
 {% include 'partials/_footer.html' %}
