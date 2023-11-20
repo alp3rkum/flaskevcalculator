@@ -15,6 +15,7 @@ def help():
 
 @app.route("/calculate", methods=["GET","POST"])
 def calculate():
+    age = 0
     global pageNumber
     if request.method == 'POST':
         match pageNumber:
@@ -25,12 +26,18 @@ def calculate():
                 amper = request.form['amper']
                 vmax = request.form['vmax']
                 btype = request.form['btype']
-                (res1,res2) = FlaskEVRange(veht,vwt,voltage,amper,vmax,btype)
+                bage = request.form['bage']
+                if bage == '':
+                    bage = 0
+                (res1,res2) = FlaskEVRange(veht,vwt,voltage,amper,vmax,btype,bage)
                 return render_template("result.html",title="Range Result",result=round(res1),result2=round(res2,2),pageNumber=pageNumber,curRoute=request.path)
             case 1:
                 watt = request.form['watt']
                 gvw = request.form['gvw']
-                (res1,res2) = FlaskEVAcc(watt,gvw)
+                age = request.form['age']
+                if age == '':
+                    age = 0
+                (res1,res2) = FlaskEVAcc(watt,gvw,age)
                 return render_template("result.html",title="Acceleration Result",result=round(res1,2),result2=round(res2,2),pageNumber=pageNumber,watt=watt,curRoute=request.path)
             case 2:
                 voltage = request.form['voltage']
@@ -38,8 +45,10 @@ def calculate():
                 range = request.form['range']
                 comparison = request.form['compare']
                 (res1, res2, res3) = FlaskEVCost(voltage,amper,range,comparison)
-                return render_template("result.html",title="Cost Calculation Result",result=round(res1,2),result2=round(res2,2),result3=round(res3,2),compType=comparison,pageNumber=pageNumber,curRoute=request.path)
-        print(pageNumber)
+                if(res3 == None):
+                    return render_template("result.html",title="Cost Calculation Result",result=round(res1,2),result2=round(res2,2),result3=None,compType=comparison,pageNumber=pageNumber,curRoute=request.path)
+                else:
+                    return render_template("result.html",title="Cost Calculation Result",result=round(res1,2),result2=round(res2,2),result3=round(res3,2),compType=comparison,pageNumber=pageNumber,curRoute=request.path)
         
     else:
         return render_template("result_err.html",curRoute=request.path)
@@ -68,6 +77,11 @@ def home():
     global pageNumber
     pageNumber = -1
     return render_template("index.html",title="Flask EV Calculator Home Page",pageNumber=pageNumber,curRoute=request.path)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    pageNumber = -2
+    return render_template("404.html",pageNumber=pageNumber),404
 
 if __name__ == '__main__':
     app.config['TEMPLATES_AUTO_RELOAD'] = True
