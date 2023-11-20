@@ -4,9 +4,24 @@ html{
     transition-property: background-color, color;
     transition-duration: 0.35s;
 }
+body{
+    margin: 0px;
+}
 
 label{
     font-weight: bold;
+}
+
+header{
+    transition-duration: 0.35s;
+}
+
+.header-text{
+    padding-left: 10px;
+}
+
+.two-tonne-header{
+    background-color: rgb(255,16,24);
 }
 
 .inputs{
@@ -29,7 +44,7 @@ label{
 }
 
 .inputs-inner{
-    margin: 5px 5px 5px 5px;
+    margin: 6px 6px 6px 6px;
 }
 
 input[type=number],select{
@@ -142,50 +157,43 @@ label{
     border-style: groove;
     border-radius: 16px;
     border-width: 4px;
-    margin: 0px 0px 0px 50px;
+    margin: 15px 0px 0px 50px;
     width: 350px;
     height: 40px;
-    transition-property: background-color;
+    transition-property: background-color, color, border-color;
     transition-duration: 0.35s;
+    border-color: gray;
 }
 .linkSpan:hover{
+    border-color: black;
     background-color: white;
     color: black;
 }
 .linkSpan.black{
-    display: inline-block;
-    text-align: center;
-    border-style: groove;
-    border-radius: 16px;
-    border-width: 4px;
-    margin: 0px 0px 0px 50px;
-    width: 350px;
-    height: 40px;
-    transition-property: background-color;
-    transition-duration: 0.35s;
+    border-color: silver;
 }
 .linkSpan.black:hover{
+    border-color: white;
     background-color: gray;
     color: white;
 }
+
 .linkSpan.blue{
+    border-color: rgb(128,128,0);
     color: rgb(128,128,0);
-    display: inline-block;
-    text-align: center;
-    border-style: groove;
-    border-radius: 16px;
-    border-width: 4px;
-    margin: 0px 0px 0px 50px;
-    width: 350px;
-    height: 40px;
-    transition-property: background-color;
-    transition-duration: 0.35s;
 }
+
 .linkSpan.blue:hover{
+    border-color: rgb(255,255,0);
     background-color: blue;
     color: yellow;
 }
 
+.linkSpan.small{
+    width: 80px;
+    height: 20px;
+    margin: 5px 0px 0px 10px;
+}
 .link{
     text-decoration: none;
     justify-content: center;
@@ -220,4 +228,26 @@ label{
 }
 .link.blue:active{
     color: rgb(255,255,0);
+}
+
+.div-content{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.div-content-hr{
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+#flask-logo{
+    margin-top: -20px;
+    margin-bottom: -40px;
+}
+
+#page-title{
+    color: black;
+    font-weight: 600;
+    font-size: 32px;
+    transition-property: color;
+    transition-property: 0.35s;
 }

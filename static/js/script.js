@@ -4,6 +4,9 @@ const inputDiv = document.querySelector(".inputs");
 const inputSpan = document.getElementsByClassName("inputSpan");
 const linkSpan = document.getElementsByClassName("linkSpan");
 const buttons = document.getElementsByTagName("button")
+const pageTitle = document.getElementById("page-title");
+const header = document.getElementsByTagName("header")[0];
+const headerText = document.getElementsByClassName("header-text")[0];
 
 span = null;
 
@@ -16,6 +19,7 @@ function changeTheme()
         case "0":
             html.style.backgroundColor = "rgb(240,240,240)";
             html.style.color = "black";
+            pageTitle.style.color = "black";
             if(span)
             {
                 if(span.classList.contains("dark"))
@@ -37,7 +41,7 @@ function changeTheme()
                 if(link.classList.contains("dark"))
                     link.classList.remove("dark");
                 if(link.classList.contains("blue"))
-                    link.classList.remove("blue");
+                    link.classList.remove("blue");             
             }
             for(const span of inputSpan)
             {
@@ -48,8 +52,8 @@ function changeTheme()
             }
             for(const span of linkSpan)
             {
-                if(span.classList.contains("dark"))
-                    span.classList.remove("dark");
+                if(span.classList.contains("black"))
+                    span.classList.remove("black");
                 if(span.classList.contains("blue"))
                     span.classList.remove("blue");
             }
@@ -63,11 +67,11 @@ function changeTheme()
                         button.classList.remove("blue");
                 }
             }
-            
             break;
         case "1":
             html.style.backgroundColor = "rgb(32,32,32)";
             html.style.color = "white";
+            pageTitle.style.color = "white";
             if(span)
             {
                 if(span.classList.contains("blue"))
@@ -98,7 +102,7 @@ function changeTheme()
             {
                 if(span.classList.contains("blue"))
                     span.classList.remove("blue");
-                span.classList.add("dark");
+                span.classList.add("black");
             }
             if(buttons)
             {
@@ -109,11 +113,11 @@ function changeTheme()
                     button.classList.add("dark");
                 }
             }
-
             break;
         case "2":
             html.style.backgroundColor = "rgb(16,32,96)";
             html.style.color = "white";
+            pageTitle.style.color = "yellow";
             if(span)
             {
                 if(span.classList.contains("dark"))
@@ -142,10 +146,9 @@ function changeTheme()
             }
             for(const span of linkSpan)
             {
-                if(span.classList.contains("dark"))
-                    span.classList.remove("dark");
-                if(span.classList.contains("blue"))
-                    span.classList.remove("blue");
+                if(span.classList.contains("black"))
+                    span.classList.remove("black");
+                span.classList.add("blue");
             }
             if(buttons)
             {
@@ -156,17 +159,20 @@ function changeTheme()
                     button.classList.add("blue");
                 }
             }
+            break;
     }
 }
 function restoreTransitions()
 {
     document.querySelector("html").style.transitionDuration = '0.35s';
+    pageTitle.style.transitionDuration = '0.35s';
         for(const link of links)
             link.style.transitionDuration = '0.35s';
         for(const span of inputSpan)
             span.style.transitionDuration = '0.35s';
         for(const span of linkSpan)
             span.style.transitionDuration = '0.35s';
+    header.style.transitionDuration = '0.25s';
     if(span)
         document.querySelector("span").style.transitionDuration = '0.35s';
     if(document.querySelector(".inputs"))
@@ -176,7 +182,6 @@ function restoreTransitions()
             for(const button of buttons)
                 button.style.transitionDuration = '0.35s';
         }
-    
 }
 
 window.onload = function () {
@@ -187,6 +192,7 @@ window.onload = function () {
         span.style.transitionDuration = '0s';
     for(const span of linkSpan)
         span.style.transitionDuration = '0s';
+    header.style.transitionDuration = '0s';
     if(span)
     {
         if(document.getElementsByTagName("span").length > 0)
@@ -200,6 +206,7 @@ window.onload = function () {
     }
     if(document.querySelector(".inputs"))
         document.querySelector(".inputs").style.transitionDuration = '0s';
+    pageTitle.style.transitionDuration = '0s';
     changeTheme();
     document.getElementById("white").checked = (sessionStorage.getItem("themeIndex") == 0);
     document.getElementById("dark").checked = (sessionStorage.getItem("themeIndex") == 1);
