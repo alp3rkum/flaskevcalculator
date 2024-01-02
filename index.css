@@ -1,0 +1,53 @@
+/* Page's CSS file */
+
+html,body{
+    background-color: rgb(84,126,208);
+    color: rgb(32,28,32);
+}
+
+table tr td{
+    background-color: rgb(112,144,216);
+    padding-left: 5px;
+    border: 1px solid black;
+    padding-right: 3vw;
+}
+
+table th{
+    background-color: rgb(32,48,64);
+    padding-left: 5px;
+    color: white;
+    border: 1px solid rgb(192,192,192);
+}
+
+.div-code, code{
+    background-color: black;
+    color: rgb(0,255,0);
+}
+
+.div-code{
+    width: 350px;
+}
+
+a{
+    color: rgb(64,56,64);
+    text-decoration: none;
+    transition-duration: 0.25s;
+}
+
+a:hover{
+    color: rgb(128,112,128);
+}
+
+a:active{
+    color: rgb(176,160,175);
+}
+
+img{
+    margin-bottom: -40px;
+    margin-top: -30px;
+}
+
+.center-table {
+    margin-left: auto;
+    margin-right: auto;
+  }
